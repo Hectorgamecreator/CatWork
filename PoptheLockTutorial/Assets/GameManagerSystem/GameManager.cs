@@ -27,4 +27,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void LoadNextLevel()
+    {
+        GameData.CurrentLevel++;
+        GameData.ResetLevel();
+    }
+
 }
