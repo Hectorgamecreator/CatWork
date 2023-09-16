@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AnchoredMotor : MonoBehaviour
 {
+    public GameData GameData;
     public int Speed = 5;
     public Direction _direction = Direction.Clockwise;
     Vector3 _initialPos; 
@@ -21,19 +22,15 @@ public class AnchoredMotor : MonoBehaviour
     void Update()
     {
         //Do this only if motor already started
-        if (_isRunning)
+        if (GameData.IsRunning)
         {
             transform.RotateAround(_anchor.position, Vector3.forward, Speed * Time.deltaTime * -(int)_direction);
         }
 
 
-        if(_didTap)
+        if(_didTap && GameData.IsRunning)
         {
-            if (!_isRunning)
-            {
-                _isRunning = true;
-                return;
-            }
+         
             ChangeDirection();
         }
     }
@@ -68,7 +65,7 @@ void ChangeDirection()
 
     public void Stop()
     {
-        _isRunning = false;
+        GameData.IsRunning = false;
     }
 }
 

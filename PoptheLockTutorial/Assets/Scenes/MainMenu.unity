@@ -1365,6 +1365,7 @@ GameObject:
   - component: {fileID: 1850203051}
   - component: {fileID: 1850203054}
   - component: {fileID: 1850203055}
+  - component: {fileID: 1850203056}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Untagged
@@ -1451,6 +1452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00beb380d7af4f409e5d4344b9fde66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameData: {fileID: 11400000, guid: b1f7c98c17f51704684e971358344170, type: 2}
   Speed: 50
   _direction: 1
 --- !u!114 &1850203051
@@ -1465,6 +1467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69604cd0b05e86a4e9efd28d98dffd09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameData: {fileID: 11400000, guid: b1f7c98c17f51704684e971358344170, type: 2}
   OnDotMissed: {fileID: 11400000, guid: 39278da2b67185749bdeaf3114d079fe, type: 2}
   OnDotScored: {fileID: 11400000, guid: d33f62298f6b0db47b748e56e7a8a212, type: 2}
 --- !u!50 &1850203052
@@ -1570,6 +1573,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1850203056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850203047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc752c8d97712a45a536f8b3a272afe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 39278da2b67185749bdeaf3114d079fe, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1850203050}
+        m_TargetAssemblyTypeName: AnchoredMotor, Assembly-CSharp
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1959121431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,7 +1659,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.5707547, b: 0.92927486, a: 1}
   m_FlipX: 0
@@ -1648,7 +1679,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959121431}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.4, y: 0, z: -10}
+  m_LocalPosition: {x: -1.4, y: 0, z: -10.03}
   m_LocalScale: {x: 0.2876892, y: 0.2830404, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

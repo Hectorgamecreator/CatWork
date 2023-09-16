@@ -15,4 +15,5 @@ MonoBehaviour:
   CurrentLevel: 1
   MaxUnlockedLevel: 1
   DotsRemaining: 1
-  Stars: 0
+  Stars: 5
+  IsRunning: 1

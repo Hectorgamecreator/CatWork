@@ -15,6 +15,13 @@ public class GameManager : MonoBehaviour
         GameData.ResetLevel();
     }
 
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && !GameData.IsRunning)
+        {
+            GameData.IsRunning = true;
+        }
+    }
   
     public void DecrementRemainingDots()
     {

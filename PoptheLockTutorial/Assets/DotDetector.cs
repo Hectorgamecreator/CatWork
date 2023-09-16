@@ -5,8 +5,7 @@ using UnityEngine;
 public class DotDetector : MonoBehaviour
 {
     GameObject _currentDot;
-    bool _isRunning = false;
-
+    public GameData GameData;
     public GameEvent OnDotMissed;
     public GameEvent OnDotScored;
 
@@ -23,24 +22,21 @@ public class DotDetector : MonoBehaviour
 
 void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            if(!_isRunning)
+            if (!GameData.IsRunning && GameData.IsRunning)
             {
-                _isRunning = true;
-                return;
-            }
 
-            if(_currentDot !=null)
-            {
-                Destroy(_currentDot);
-                OnDotScored.Raise();
-            }
-            else
-            {
-                OnDotMissed.Raise();
+                if (_currentDot != null)
+                {
+                    Destroy(_currentDot);
+                    OnDotScored.Raise();
+                }
+                else
+                {
+                    OnDotMissed.Raise();
+                }
             }
         }
-    
     }
 }
